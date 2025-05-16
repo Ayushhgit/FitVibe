@@ -8,7 +8,7 @@ export const clothingItems: ClothingItem[] = [
     id: 't1',
     name: 'White T-Shirt',
     category: 'tops',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/clothes/white-tee.jpg',
     seasons: ['spring', 'summer', 'fall', 'all'],
     styles: ['casual', 'streetwear'],
     colors: ['white']
@@ -17,7 +17,7 @@ export const clothingItems: ClothingItem[] = [
     id: 't2',
     name: 'Black Turtleneck',
     category: 'tops',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/clothes/black_tn.webp',
     seasons: ['fall', 'winter'],
     styles: ['formal', 'casual'],
     colors: ['black']
@@ -26,7 +26,7 @@ export const clothingItems: ClothingItem[] = [
     id: 't3',
     name: 'Floral Blouse',
     category: 'tops',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/clothes/fb.webp',
     seasons: ['spring', 'summer'],
     styles: ['bohemian', 'casual'],
     colors: ['pink', 'green', 'white']
@@ -35,7 +35,7 @@ export const clothingItems: ClothingItem[] = [
     id: 't4',
     name: 'Striped Sweater',
     category: 'tops',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/clothes/ss.jpg',
     seasons: ['fall', 'winter'],
     styles: ['casual', 'vintage'],
     colors: ['blue', 'white']
@@ -46,7 +46,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'b1',
     name: 'Blue Jeans',
     category: 'bottoms',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/clothes/bjeans.webp',
     seasons: ['all'],
     styles: ['casual', 'streetwear'],
     colors: ['blue']
@@ -55,7 +55,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'b2',
     name: 'Black Dress Pants',
     category: 'bottoms',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/clothes/bdp.webp',
     seasons: ['all'],
     styles: ['formal'],
     colors: ['black']
@@ -64,7 +64,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'b3',
     name: 'Pleated Skirt',
     category: 'bottoms',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/clothes/ps.avif',
     seasons: ['spring', 'summer', 'fall'],
     styles: ['casual', 'vintage'],
     colors: ['gray']
@@ -73,7 +73,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'b4',
     name: 'Cargo Pants',
     category: 'bottoms',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/clothes/cp.avif',
     seasons: ['spring', 'fall'],
     styles: ['casual', 'streetwear'],
     colors: ['green', 'brown']
@@ -84,7 +84,7 @@ export const clothingItems: ClothingItem[] = [
     id: 's1',
     name: 'White Sneakers',
     category: 'shoes',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/shoes/ws.webp',
     seasons: ['spring', 'summer', 'fall'],
     styles: ['casual', 'streetwear', 'sporty'],
     colors: ['white']
@@ -93,7 +93,7 @@ export const clothingItems: ClothingItem[] = [
     id: 's2',
     name: 'Black Dress Shoes',
     category: 'shoes',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/shoes/bs.webp',
     seasons: ['all'],
     styles: ['formal'],
     colors: ['black']
@@ -102,7 +102,7 @@ export const clothingItems: ClothingItem[] = [
     id: 's3',
     name: 'Brown Boots',
     category: 'shoes',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/shoes/bb.jpg',
     seasons: ['fall', 'winter'],
     styles: ['casual', 'vintage'],
     colors: ['brown']
@@ -111,7 +111,7 @@ export const clothingItems: ClothingItem[] = [
     id: 's4',
     name: 'Colorful Sandals',
     category: 'shoes',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/shoes/cs.avif',
     seasons: ['summer'],
     styles: ['casual', 'bohemian'],
     colors: ['orange', 'blue', 'yellow']
@@ -122,7 +122,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'a1',
     name: 'Gold Necklace',
     category: 'accessories',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/assc/gn.jpg',
     seasons: ['all'],
     styles: ['formal', 'casual', 'bohemian'],
     colors: ['yellow']
@@ -131,7 +131,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'a2',
     name: 'Black Sunglasses',
     category: 'accessories',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/assc/bs.jpg',
     seasons: ['spring', 'summer'],
     styles: ['casual', 'streetwear'],
     colors: ['black']
@@ -140,7 +140,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'a3',
     name: 'Patterned Scarf',
     category: 'accessories',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/assc/ps.jpg',
     seasons: ['fall', 'winter'],
     styles: ['bohemian', 'vintage'],
     colors: ['purple', 'pink', 'blue']
@@ -149,7 +149,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'a4',
     name: 'Baseball Cap',
     category: 'accessories',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/assc/bc.jpg',
     seasons: ['spring', 'summer'],
     styles: ['casual', 'sporty', 'streetwear'],
     colors: ['red', 'blue']
@@ -160,7 +160,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'o1',
     name: 'Denim Jacket',
     category: 'outerwear',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/owear/dj.jpg',
     seasons: ['spring', 'fall'],
     styles: ['casual', 'streetwear'],
     colors: ['blue']
@@ -169,7 +169,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'o2',
     name: 'Black Blazer',
     category: 'outerwear',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/owear/bb.webp',
     seasons: ['fall', 'winter', 'spring'],
     styles: ['formal'],
     colors: ['black']
@@ -178,7 +178,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'o3',
     name: 'Trench Coat',
     category: 'outerwear',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/owear/tc.webp',
     seasons: ['fall', 'winter'],
     styles: ['formal', 'casual', 'vintage'],
     colors: ['brown', 'beige']
@@ -187,7 +187,7 @@ export const clothingItems: ClothingItem[] = [
     id: 'o4',
     name: 'Puffer Jacket',
     category: 'outerwear',
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/images/owear/pj.jpg',
     seasons: ['winter'],
     styles: ['casual', 'sporty', 'streetwear'],
     colors: ['red', 'black']

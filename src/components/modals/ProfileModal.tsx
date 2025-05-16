@@ -12,6 +12,7 @@ const ProfileModal = () => {
   const { savedOutfits } = useStyleForge();
   const [name, setName] = useState('Style Master');
   const [isEditing, setIsEditing] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
 
   const favoriteOutfits = savedOutfits.filter(outfit => outfit.isFavorite);
   const highestScore = savedOutfits.length > 0 
@@ -93,17 +94,47 @@ const ProfileModal = () => {
             </div>
           </div>
           <div className="w-full space-y-1.5">
-            <div className="flex items-center p-2 rounded-lg hover:bg-muted/50 transition-colors">
-              <Award className="h-5 w-5 mr-3 text-fashion-purple" />
-              <span>Achievements</span>
+            <div>
+              <button
+                className="flex items-center p-2 rounded-lg hover:bg-muted/50 transition-colors w-full"
+                onClick={() => setOpenSection(openSection === 'achievements' ? null : 'achievements')}
+              >
+                <Award className="h-5 w-5 mr-3 text-fashion-purple" />
+                <span>Achievements</span>
+              </button>
+              {openSection === 'achievements' && (
+                <div className="pl-10 pb-2 text-sm text-muted-foreground">
+                  <p>No achievements yet. Keep styling!</p>
+                </div>
+              )}
             </div>
-            <div className="flex items-center p-2 rounded-lg hover:bg-muted/50 transition-colors">
-              <Heart className="h-5 w-5 mr-3 text-fashion-purple" />
-              <span>Favorite Styles</span>
+            <div>
+              <button
+                className="flex items-center p-2 rounded-lg hover:bg-muted/50 transition-colors w-full"
+                onClick={() => setOpenSection(openSection === 'favorites' ? null : 'favorites')}
+              >
+                <Heart className="h-5 w-5 mr-3 text-fashion-purple" />
+                <span>Favorite Styles</span>
+              </button>
+              {openSection === 'favorites' && (
+                <div className="pl-10 pb-2 text-sm text-muted-foreground">
+                  <p>Your favorite styles will appear here.</p>
+                </div>
+              )}
             </div>
-            <div className="flex items-center p-2 rounded-lg hover:bg-muted/50 transition-colors">
-              <Clock className="h-5 w-5 mr-3 text-fashion-purple" />
-              <span>Activity History</span>
+            <div>
+              <button
+                className="flex items-center p-2 rounded-lg hover:bg-muted/50 transition-colors w-full"
+                onClick={() => setOpenSection(openSection === 'activity' ? null : 'activity')}
+              >
+                <Clock className="h-5 w-5 mr-3 text-fashion-purple" />
+                <span>Activity History</span>
+              </button>
+              {openSection === 'activity' && (
+                <div className="pl-10 pb-2 text-sm text-muted-foreground">
+                  <p>No activity yet.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

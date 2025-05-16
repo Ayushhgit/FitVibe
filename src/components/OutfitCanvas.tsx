@@ -47,7 +47,7 @@ const OutfitCanvas: React.FC = () => {
         <h2 className="text-lg font-bold">Your Creation</h2>
       </div>
 
-      <div className="relative flex-1 p-4 overflow-hidden">
+      <div className="relative flex-1 p-4 overflow-visible">
         {outfitItems.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center text-muted-foreground">
             <p className="mb-2">Drag items here to create your outfit</p>
