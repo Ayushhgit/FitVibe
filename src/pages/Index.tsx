@@ -10,15 +10,8 @@ import { Button } from '@/components/ui/button';
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b py-2 px-4">
-        <Link to="/" className="inline-block">
-          <Button variant="ghost" size="sm" className="gap-1">
-            <ArrowLeft className="h-4 w-4" /> Back to Home
-          </Button>
-        </Link>
-      </div>
       <Header />
-      <main className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
+      <main className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4 p-4 pt-28">
         <div className="h-[calc(100vh-8rem)] lg:col-span-1">
           <Wardrobe />
         </div>

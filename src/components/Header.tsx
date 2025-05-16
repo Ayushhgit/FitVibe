@@ -23,52 +23,45 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-10 z-50 bg-background/80 backdrop-blur-md border-b py-3 px-4 sm:px-8 flex items-center justify-between">
+    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-7xl rounded-full bg-white/30 dark:bg-background/60 backdrop-blur-lg shadow-xl border border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <div className="font-bold text-2xl text-fashion-purple">StyleForge</div>
-        <span className="hidden sm:block text-sm px-3 py-1 bg-gradient-to-r from-fashion-purple/20 to-fashion-purple-light/20 rounded-full">
-          Beta
-        </span>
+        <div className="font-bold text-2xl bg-gradient-to-r from-fashion-purple to-fashion-purple-light text-transparent bg-clip-text">FitVibe</div>
+        <span className="hidden sm:block text-sm px-3 py-1 bg-fashion-purple/20 text-fashion-purple rounded-full font-semibold">Beta</span>
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 ml-auto">
         <div className="hidden sm:flex items-center bg-fashion-purple/10 rounded-full px-4 py-1.5">
           <span className="mr-1 font-medium">Score:</span>
           <span className="text-fashion-purple font-bold">{styleScore.total}</span>
         </div>
-        
         <Button 
           variant="outline" 
           onClick={clearOutfit}
-          className="hidden sm:flex"
+          className="hidden sm:flex hover:bg-fashion-purple/20 hover:text-fashion-purple"
         >
           Clear
         </Button>
-        
         <Link to="/saved" className="hidden sm:block">
-          <Button variant="ghost" size="icon" className="rounded-full transition-all duration-300 hover:bg-fashion-purple hover:text-white">
-            <Heart className="h-5 w-5" />
+          <Button variant="ghost" size="icon" className="rounded-full transition-all duration-300 hover:bg-fashion-purple/20 hover:text-fashion-purple">
+            <Heart className="h-5 w-5 text-fashion-purple" />
           </Button>
         </Link>
-        
         <Button 
           variant="ghost" 
           size="icon" 
           onClick={openProfileModal}
-          className="rounded-full transition-all duration-300 hover:bg-fashion-purple hover:text-white"
+          className="rounded-full transition-all duration-300 hover:bg-fashion-purple/20 hover:text-fashion-purple"
         >
-          <UserRound className="h-5 w-5" />
+          <UserRound className="h-5 w-5 text-fashion-purple" />
         </Button>
-        
         <Button 
           variant="ghost" 
           size="icon" 
           onClick={openSettingsModal}
-          className="rounded-full transition-all duration-300 hover:bg-fashion-purple hover:text-white"
+          className="rounded-full transition-all duration-300 hover:bg-fashion-purple/20 hover:text-fashion-purple"
         >
-          <Settings className="h-5 w-5" />
+          <Settings className="h-5 w-5 text-fashion-purple" />
         </Button>
-        
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
             <Button variant="default" className="bg-fashion-purple hover:bg-fashion-purple/90">
@@ -98,7 +91,6 @@ const Header: React.FC = () => {
             </DialogFooter>
           </DialogContent>
         </Dialog>
-        
         <ThemeToggle />
       </div>
     </header>
