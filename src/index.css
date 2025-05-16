@@ -1,68 +1,105 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --background: 260 60% 99%;
+    --foreground: 260 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 10% 10%;
+
+    --primary: 255 80% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 30% 96%;
+    --secondary-foreground: 260 10% 10%;
+
+    --muted: 260 30% 96%;
+    --muted-foreground: 260 10% 40%;
+
+    --accent: 260 30% 96%;
+    --accent-foreground: 260 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 30% 90%;
+    --input: 260 30% 90%;
+    --ring: 255 80% 75%;
+
+    --radius: 1rem;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    --background: 260 30% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 260 30% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 260 30% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 255 80% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 260 30% 20%;
+    --muted-foreground: 260 10% 70%;
+
+    --accent: 260 30% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 30% 25%;
+    --input: 260 30% 25%;
+    --ring: 255 80% 75%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .fashion-item {
+    @apply cursor-grab active:cursor-grabbing transition-transform hover:scale-105 hover:shadow-md;
+  }
+  
+  .wardrobe-category {
+    @apply px-4 py-2 rounded-full transition-all duration-300 hover:bg-fashion-purple hover:text-white;
+  }
+  
+  .wardrobe-category.active {
+    @apply bg-fashion-purple text-white;
+  }
+  
+  .combo-score {
+    @apply text-2xl font-bold opacity-0 text-fashion-purple;
+    animation: score-pop 0.5s ease-out forwards;
+  }
+  
+  .outfit-canvas {
+    @apply bg-gradient-to-br from-white to-fashion-purple-light rounded-xl shadow-lg border-2 border-dashed border-fashion-purple transition-all;
+  }
+  
+  .outfit-canvas.drag-over {
+    @apply border-solid animate-glow;
   }
 }
