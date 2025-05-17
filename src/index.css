@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -81,25 +80,87 @@
   .fashion-item {
     @apply cursor-grab active:cursor-grabbing transition-transform hover:scale-105 hover:shadow-md;
   }
-  
+
   .wardrobe-category {
     @apply px-4 py-2 rounded-full transition-all duration-300 hover:bg-fashion-purple hover:text-white;
   }
-  
+
   .wardrobe-category.active {
     @apply bg-fashion-purple text-white;
   }
-  
+
   .combo-score {
     @apply text-2xl font-bold opacity-0 text-fashion-purple;
     animation: score-pop 0.5s ease-out forwards;
   }
-  
+
   .outfit-canvas {
     @apply bg-gradient-to-br from-white to-fashion-purple-light rounded-xl shadow-lg border-2 border-dashed border-fashion-purple transition-all;
   }
-  
+
   .outfit-canvas.drag-over {
     @apply border-solid animate-glow;
   }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    border-color: rgba(165, 90, 255, 0.5);
+  }
+  50% {
+    border-color: rgba(255, 150, 200, 0.8);
+  }
+}
+
+@keyframes score-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.gradient-below-header {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #A55AFF, #FF96C8);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #A55AFF, #FF96C8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button-gradient {
+  background: linear-gradient(to right, #A55AFF, #FF96C8);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.score-meter-ring {
+  stroke: url(#scoreGradient);
+  stroke-width: 10;
+  fill: none;
 }

@@ -16,25 +16,25 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <StyleForgeProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route path="/create" element={<Index />} />
-              <Route path="/saved" element={<SavedOutfits />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <ProfileModal />
-            <SettingsModal />
-          </BrowserRouter>
-        </StyleForgeProvider>
-      </TooltipProvider>
-    </QueryClientProvider>
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <StyleForgeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/create" element={<Index />} />
+            <Route path="/saved" element={<SavedOutfits />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <ProfileModal />
+          <SettingsModal />
+        </BrowserRouter>
+      </StyleForgeProvider>
+    </TooltipProvider>
+  </QueryClientProvider>
   </ThemeProvider>
 );
 
