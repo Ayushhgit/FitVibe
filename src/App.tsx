@@ -10,29 +10,32 @@ import NotFound from "./pages/NotFound";
 import ProfileModal from "./components/modals/ProfileModal";
 import SettingsModal from "./components/modals/SettingsModal";
 import { StyleForgeProvider } from "./context/StyleForgeContext";
+import { ThemeProvider } from "next-themes";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <StyleForgeProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/create" element={<Index />} />
-            <Route path="/saved" element={<SavedOutfits />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <ProfileModal />
-          <SettingsModal />
-        </BrowserRouter>
-      </StyleForgeProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <StyleForgeProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/create" element={<Index />} />
+              <Route path="/saved" element={<SavedOutfits />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <ProfileModal />
+            <SettingsModal />
+          </BrowserRouter>
+        </StyleForgeProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ThemeProvider>
 );
 
 export default App;

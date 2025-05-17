@@ -2,6 +2,7 @@ import React, { useState, useRef, Suspense, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Environment, ContactShadows, useTexture } from '@react-three/drei';
 import { Brush, Sparkles, Shirt, Heart, User, Settings, Wand2, Moon, Sun } from 'lucide-react';
+import * as THREE from 'three';
 
 // Theme Toggle Component
 const ThemeToggle = () => {
@@ -89,11 +90,25 @@ const motion = {
     whileTap, 
     className, 
     onClick 
+  }: {
+    children: React.ReactNode;
+    initial?: any;
+    animate?: any;
+    transition?: any;
+    whileHover?: any;
+    whileTap?: any;
+    className?: string;
+    onClick?: () => void;
   }) => {
     const [isHover, setIsHover] = useState(false);
     const [isPressed, setIsPressed] = useState(false);
     
-    let style = {};
+    interface StyleType {
+      scale?: number;
+      [key: string]: any;
+    }
+    
+    let style: StyleType = {};
     
     if (isHover && whileHover) {
       style = { ...style, ...whileHover };
@@ -130,7 +145,12 @@ const motion = {
     const [isHover, setIsHover] = useState(false);
     const [isPressed, setIsPressed] = useState(false);
     
-    let style = {};
+    interface StyleType {
+      scale?: number;
+      [key: string]: any;
+    }
+    
+    let style: StyleType = {};
     
     if (isHover && whileHover) {
       style = { ...style, ...whileHover };
@@ -199,7 +219,7 @@ function FallingClothes() {
 }
 
 function ClothItem({ position, rotation, speed }) {
-  const meshRef = useRef();
+  const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame((state, delta) => {
     if (meshRef.current) {
