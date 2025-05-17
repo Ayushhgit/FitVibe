@@ -5,7 +5,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Heart, Trash2 } from 'lucide-react';
 
 const SavedOutfits: React.FC = () => {
-  const { savedOutfits, toggleFavorite, removeItemFromOutfit } = useStyleForge();
+  const { savedOutfits, toggleFavorite, removeOutfit } = useStyleForge();
 
   if (savedOutfits.length === 0) {
     return (
@@ -75,7 +75,7 @@ const SavedOutfits: React.FC = () => {
                     <Heart size={16} fill={outfit.isFavorite ? "currentColor" : "none"} />
                   </button>
                   <button
-                    onClick={() => removeItemFromOutfit(outfit.id)}
+                    onClick={() => removeOutfit(outfit.id)}
                     className="text-gray-400 hover:text-red-600 transition-colors"
                     aria-label="Remove outfit"
                   >

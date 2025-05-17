@@ -18,6 +18,7 @@ interface StyleForgeContextProps {
   saveOutfit: (name: string) => void;
   toggleFavorite: (outfitId: string) => void;
   clearOutfit: () => void;
+  removeOutfit: (outfitId: string) => void; // ✅ Added here
 }
 
 const StyleForgeContext = createContext<StyleForgeContextProps | undefined>(undefined);
@@ -29,6 +30,8 @@ export const StyleForgeProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   const [selectedCategory, setSelectedCategory] = useState<ClothingCategory | 'all'>('all');
   const [styleScore, setStyleScore] = useState<StyleScore>({ total: 0, combos: [] });
   const [savedOutfits, setSavedOutfits] = useState<Outfit[]>([]);
+
+  
 
   const { toast } = useToast();
 
@@ -96,6 +99,18 @@ export const StyleForgeProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     }
   };
 
+  const removeOutfit = (outfitId: string) => {
+    const outfitToRemove = savedOutfits.find(outfit => outfit.id === outfitId);
+    if (!outfitToRemove) return;
+  
+    setSavedOutfits(prev => prev.filter(outfit => outfit.id !== outfitId));
+  
+    toast({
+      title: "Outfit Removed",
+      description: `"${outfitToRemove.name}" has been removed from your saved outfits.`,
+      variant: "destructive"
+    });
+  };
   const updateItemPosition = (itemId: string, position: Position) => {
     setOutfitItems(prev => 
       prev.map(item => 
@@ -183,7 +198,8 @@ export const StyleForgeProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         updateItemPosition,
         saveOutfit,
         toggleFavorite,
-        clearOutfit
+        clearOutfit,
+        removeOutfit
       }}
     >
       {children}
