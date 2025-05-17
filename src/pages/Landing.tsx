@@ -266,8 +266,8 @@ const Landing = () => {
                       />
                       <defs>
                         <linearGradient id="score-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="var(--primary)" />
-                          <stop offset="100%" stopColor="var(--secondary)" />
+                          <stop offset="0%" stopColor="#A55AFF" />
+                          <stop offset="100%" stopColor="#FF96C8" />
                         </linearGradient>
                       </defs>
                       <text 
