@@ -93,6 +93,15 @@ const Landing = () => {
     }
   };
 
+  const chatMessagesRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to bottom on new message
+  useEffect(() => {
+    if (chatMessagesRef.current) {
+      chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;
+    }
+  }, [chatMessages]);
+
   return (
     <div className={`${isDark ? 'dark' : ''} transition-colors duration-300`}>
       {/* Progress bar */}
@@ -161,19 +170,23 @@ const Landing = () => {
               <span className="text-xl font-bold text-gradient">FitVibe</span>
             </a>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="font-medium hover:text-primary transition-colors">Features</a>
-              <a href="#how-it-works" className="font-medium hover:text-primary transition-colors">How It Works</a>
-              <a href="#demo" className="font-medium hover:text-primary transition-colors">Interactive Demo</a>
-              <a href="#ai-analysis" className="font-medium hover:text-primary transition-colors">AI Analysis</a>
-              <a href="#testimonials" className="font-medium hover:text-primary transition-colors">Testimonials</a>
-            </nav>
-
             {/* Action Buttons */}
             <div className="flex items-center space-x-4">
               <button className="hidden md:block px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors font-medium">Log In</button>
               <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg">Try Free</button>
+
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              >
+                {isDark ? (
+                  <Sun className="h-5 w-5 text-yellow-400" />
+                ) : (
+                  <Moon className="h-5 w-5 text-neutral-600 dark:text-neutral-300" />
+                )}
+              </button>
+
               <button 
                 className="md:hidden p-2"
                 onClick={() => setIsMenuOpen(true)}
@@ -355,14 +368,14 @@ const Landing = () => {
             </div>
           </div>
 
-          <div className="h-[calc(100%-8rem)] overflow-y-auto p-4 space-y-4">
+          <div className="h-[calc(100%-8rem)] overflow-y-auto p-4 space-y-4" ref={chatMessagesRef}>
             {chatMessages.map((message, index) => (
               <div 
                 key={index}
                 className={`p-3 rounded-lg max-w-[80%] ${
                   message.type === 'ai' 
                     ? 'bg-neutral-100 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100' 
-                    : 'bg-gradient-primary text-white ml-auto'
+                    : 'bg-gradient-primary text-white dark:text-neutral-900 ml-auto'
                 }`}
               >
                 {message.text}
@@ -380,7 +393,7 @@ const Landing = () => {
                 placeholder="Ask about style advice..."
                 className="flex-1 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
-              <button className="p-2 text-primary">
+              <button className="p-2 text-primary hover:text-primary-dark transition-colors">
                 <Send className="h-5 w-5" />
               </button>
             </div>
