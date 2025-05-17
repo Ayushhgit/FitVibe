@@ -161,7 +161,7 @@ const Landing = () => {
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md transition-all duration-300">
+      <header className="fixed top-4 left-1/2 -translate-x-1/2 z-40 bg-white/80 dark:bg-neutral-900/80 rounded-full backdrop-blur-md transition-all duration-300 w-[95%] max-w-7xl">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -172,8 +172,7 @@ const Landing = () => {
 
             {/* Action Buttons */}
             <div className="flex items-center space-x-4">
-              <button className="hidden md:block px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors font-medium">Log In</button>
-              <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg">Try Free</button>
+              <a href='/create'><button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg">Try Free</button> </a>
 
               {/* Theme Toggle */}
               <button
@@ -222,11 +221,8 @@ const Landing = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-12">
-                <button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg w-full sm:w-auto">Start Styling Now</button>
-                <button className="px-8 py-3 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors font-medium flex items-center justify-center gap-2 w-full sm:w-auto">
-                  <PlayCircle className="h-5 w-5" />
-                  See How It Works
-                </button>
+                 <a href='/create'><button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg w-full sm:w-auto">Start Styling Now</button> </a>
+                
               </div>
 
               <div className="flex items-center gap-3">
@@ -308,13 +304,13 @@ const Landing = () => {
                 </div>
 
                 {/* AI feedback */}
-                <div className="bg-neutral-50 dark:bg-neutral-800/80 rounded-lg p-4 mb-6 border border-neutral-200 dark:border-neutral-700">
+                <div className="bg-gradient-to-r from-purple-400 to-pink-400 dark:bg-neutral-800/80 rounded-lg p-4 mb-6 border border-neutral-200 dark:border-neutral-700">
                   <h4 className="font-medium flex items-center gap-2 mb-2">
                     <Sparkles className="h-4 w-4 text-primary" />
                     <span>AI Style Analysis</span>
                   </h4>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                    <span className="font-medium text-neutral-900 dark:text-neutral-200">Exceptional color harmony!</span> The navy blazer pairs perfectly with the cream shirt and brown shoes. The fit accentuates your frame while maintaining professionalism.
+                  <p className="text-sm text-neutral-600 dark:text-grey-400">
+                    <span className="font-medium text-neutral-900 dark:text-neutral-200">Exceptional color harmony!</span > The navy blazer pairs perfectly with the cream shirt and brown shoes. The fit accentuates your frame while maintaining professionalism.
                   </p>
                 </div>
 
