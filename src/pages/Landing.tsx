@@ -198,7 +198,7 @@ const Landing = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section className="relative pt-24 pb-20 overflow-hidden">
         {/* Background shapes */}
         <div className="absolute top-1/4 left-1/4 w-3/4 h-3/4 -translate-x-1/2 -translate-y-1/2 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] bg-gradient-to-br from-primary/15 to-secondary/15 animate-morph"></div>
         <div className="absolute bottom-0 right-0 w-1/2 h-1/2 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] bg-gradient-to-br from-primary/15 to-secondary/15 animate-morph opacity-70"></div>
@@ -342,69 +342,70 @@ const Landing = () => {
 
       {/* Chat widget */}
       <div className="fixed bottom-6 right-6 z-50">
-        <div 
-          className="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center text-white shadow-lg cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setIsChatOpen(!isChatOpen)}
-        >
-          <MessageCircle className="h-6 w-6" />
-        </div>
+  <div 
+    className="w-16 h-16 rounded-[2rem] bg-gradient-to-r from-purple-300 to-pink-300 flex items-center justify-center text-white shadow-lg cursor-pointer hover:scale-110 transition-transform"
+    onClick={() => setIsChatOpen(!isChatOpen)}
+  >
+    <MessageCircle className="h-6 w-6" />
+  </div>
 
-        <div 
-          className={`absolute bottom-16 right-0 w-80 h-96 bg-white dark:bg-neutral-800 rounded-lg shadow-xl overflow-hidden transform transition-all duration-300 ${
-            isChatOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'
-          }`}
-        >
-          <div className="bg-gradient-primary p-4 text-white">
-            <div className="flex items-center gap-3">
-              <Sparkles className="h-5 w-5" />
-              <div>
-                <h4 className="font-medium">Style Assistant</h4>
-                <p className="text-xs opacity-90">Powered by FitVibe AI</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="h-[calc(100%-8rem)] overflow-y-auto p-4 space-y-4" ref={chatMessagesRef}>
-            {chatMessages.map((message, index) => (
-              <div 
-                key={index}
-                className={`p-3 rounded-lg max-w-[80%] ${
-                  message.type === 'ai' 
-                    ? 'bg-neutral-100 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100' 
-                    : 'bg-gradient-primary text-white dark:text-neutral-900 ml-auto'
-                }`}
-              >
-                {message.text}
-              </div>
-            ))}
-          </div>
-
-          <div className="p-4 border-t border-neutral-200 dark:border-neutral-700">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={chatInput}
-                onChange={(e) => setChatInput(e.target.value)}
-                onKeyPress={handleChatInput}
-                placeholder="Ask about style advice..."
-                className="flex-1 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-primary/20"
-              />
-              <button className="p-2 text-primary hover:text-primary-dark transition-colors">
-                <Send className="h-5 w-5" />
-              </button>
-            </div>
-          </div>
+  <div 
+    className={`absolute bottom-20 right-0 w-80 h-96 bg-white dark:bg-neutral-800 rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 ${
+      isChatOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'
+    }`}
+  >
+    <div className="bg-gradient-to-r from-purple-300 to-pink-300 p-4 text-white">
+      <div className="flex items-center gap-3">
+        <Sparkles className="h-5 w-5" />
+        <div>
+          <h4 className="font-medium">Style Assistant</h4>
+          <p className="text-xs opacity-90">Powered by FitVibe AI</p>
         </div>
       </div>
+    </div>
 
-      {/* Back to top button */}
-      <a 
-        href="#top" 
-        className="fixed bottom-6 left-6 p-2 bg-white dark:bg-neutral-800 rounded-full shadow-lg z-40 opacity-0 invisible transition-all duration-300"
-        id="back-to-top"
-      >
-        <ChevronUp className="h-6 w-6 text-primary" />
-      </a>
+    <div className="h-[calc(100%-8rem)] overflow-y-auto p-4 space-y-4" ref={chatMessagesRef}>
+      {chatMessages.map((message, index) => (
+        <div 
+          key={index}
+          className={`p-3 rounded-xl max-w-[80%] ${
+            message.type === 'ai' 
+              ? 'bg-pink-100 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100' 
+              : 'bg-gradient-to-r from-purple-300 to-pink-300 text-white ml-auto'
+          }`}
+        >
+          {message.text}
+        </div>
+      ))}
+    </div>
+
+    <div className="p-4 border-t border-pink-200 dark:border-pink-700">
+      <div className="flex gap-2">
+        <input
+          type="text"
+          value={chatInput}
+          onChange={(e) => setChatInput(e.target.value)}
+          onKeyPress={handleChatInput}
+          placeholder="Ask about style advice..."
+          className="flex-1 px-5 py-3 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-pink-300 dark:focus:ring-pink-700"
+        />
+        <button className="p-2 text-pink-500 hover:text-pink-600 transition-colors">
+          <Send className="h-5 w-5" />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* Back to top button */}
+<a 
+  href="#top" 
+  className="fixed bottom-6 left-6 px-4 py-3 bg-gradient-to-r from-purple-300 to-pink-300 rounded-full shadow-lg z-40 opacity-0 invisible transition-all duration-300"
+  id="back-to-top"
+>
+  <ChevronUp className="h-6 w-6 text-white" />
+</a>
+
     </div>
   );
 };

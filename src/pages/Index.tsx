@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
       <main className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4 p-4 pt-28">
         <div className="h-[calc(100vh-8rem)] lg:col-span-1">

@@ -27,7 +27,7 @@ const WardrobeItem: React.FC<WardrobeItemProps> = ({ item }) => {
 
   return (
     <Card 
-      className="fashion-item hover:bg-gradient-to-br hover:from-white hover:to-fashion-purple-light/30 overflow-hidden"
+      className="bg-pink hover:bg-gradient-to-br hover:from-white hover:to-fashion-purple-light/30 overflow-hidden"
       draggable
       onDragStart={handleDragStart}
       onClick={() => addItemToOutfit(item)}

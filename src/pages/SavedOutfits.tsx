@@ -24,20 +24,20 @@ const SavedOutfits: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b py-4 px-4 sm:px-8 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link to="/">
+          <Link to="/create">
             <Button variant="ghost" size="icon" className="mr-2">
               <ArrowLeft className="h-5 w-5" />
             </Button>
           </Link>
-          <Brush className="h-6 w-6 text-fashion-purple" />
-          <div className="font-bold text-2xl text-fashion-purple">StyleForge</div>
+          <Brush className="h-6 w-6 text-pink-500" />
+          <div className="font-bold text-2xl bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">FitVibe</div>
         </div>
         <div className="flex items-center gap-3">
           <Button 
             variant="ghost" 
             size="icon" 
             onClick={openProfileModal} 
-            className="rounded-full transition-all duration-300 hover:bg-fashion-purple hover:text-white"
+            className="rounded-full transition-all duration-300 hover:bg-fashion-purple text-pink-400 hover:text-white"
           >
             <UserRound className="h-5 w-5" />
           </Button>
@@ -45,7 +45,7 @@ const SavedOutfits: React.FC = () => {
             variant="ghost" 
             size="icon" 
             onClick={openSettingsModal}
-            className="rounded-full transition-all duration-300 hover:bg-fashion-purple hover:text-white"
+            className="rounded-full transition-all duration-300 text-pink-400 hover:bg-fashion-purple hover:text-white"
           >
             <Settings className="h-5 w-5" />
           </Button>
@@ -56,7 +56,7 @@ const SavedOutfits: React.FC = () => {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
           <div>
-            <h1 className="text-3xl font-bold">Your Saved Outfits</h1>
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Your Saved Outfits</h1>
             <p className="text-muted-foreground mt-1">Browse and manage your saved outfit collections</p>
           </div>
           
@@ -74,7 +74,7 @@ const SavedOutfits: React.FC = () => {
         {filteredOutfits.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20">
             <div className="h-20 w-20 rounded-full bg-muted flex items-center justify-center mb-4">
-              <Heart className="h-10 w-10 text-muted-foreground" />
+              <Heart className="h-10 w-10 text-red-400" />
             </div>
             <h2 className="text-xl font-medium mb-2">No outfits found</h2>
             <p className="text-muted-foreground mb-6">
@@ -84,7 +84,7 @@ const SavedOutfits: React.FC = () => {
             </p>
             {!searchTerm && (
               <Link to="/create">
-                <Button className="bg-fashion-purple hover:bg-fashion-purple/90">
+                <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
                   Create an Outfit
                 </Button>
               </Link>

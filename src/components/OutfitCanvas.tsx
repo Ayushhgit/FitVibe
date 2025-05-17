@@ -35,13 +35,14 @@ const OutfitCanvas: React.FC = () => {
     }
   };
 
-  const canvasClasses = `outfit-canvas w-full h-full flex flex-col ${isDragOver ? 'drag-over' : ''}`;
+  const canvasClasses = `outfit-canvas w-full h-full dark:bg-gradient-to-br dark:from-indigo-400 dark:to-violet-400  flex flex-col ${isDragOver ? 'drag-over' : ''}`;
 
   return (
     <div className={canvasClasses}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
+      
     >
       <div className="p-4 border-b">
         <h2 className="text-lg font-bold">Your Creation</h2>

@@ -24,10 +24,10 @@ const ThemeToggle: React.FC = () => {
       variant="ghost"
       size="icon"
       onClick={() => setIsDark(!isDark)}
-      className="rounded-full transition-all duration-300 hover:bg-fashion-purple hover:text-white"
+      className="rounded-full transition-all duration-300 hover:bg-fashion-purple/20 hover:text-white"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
-      {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+      {isDark ? <Sun className="h-6 w-6 text-yellow-500" /> : <Moon className="h-5 w-5" />}
     </Button>
   );
 };

@@ -62,6 +62,9 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				backgroundImage: {
+					'fashion-gradient': 'linear-gradient(to right, #9b87f5, #ffdee2)',
+				  },
         fashion: {
           purple: "#9b87f5",
           "purple-light": "#d6bcfa",

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import WardrobeFilter from './WardrobeFilter';
 import WardrobeItem from './WardrobeItem';
@@ -9,7 +8,7 @@ const Wardrobe: React.FC = () => {
   const { filteredItems } = useStyleForge();
 
   return (
-    <div className="h-full flex flex-col border rounded-lg bg-card">
+    <div className="h-full flex flex-col border rounded-lg bg-white dark:bg-gradient-to-r dark:from-purple-400 dark:to-pink-400">
       <h2 className="text-lg font-bold p-4 border-b">Your Wardrobe</h2>
       <WardrobeFilter />
       <ScrollArea className="flex-1">
