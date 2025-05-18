@@ -21,7 +21,7 @@ Built during a hackathon, FitVibe focuses on delightful UI, smooth interactions,
 ## 🛠 Tech Stack
 
 - **Frontend:** React + Tailwind CSS + Framer Motion
-- **State Management:** Zustand (or Context API)
+- **State Management:** Zustand
 - **Drag & Drop:** `@dnd-kit/core` or `react-beautiful-dnd`
 - **Style Scoring Logic:** Custom JS-based rule engine
 - **Animations:** Framer Motion
