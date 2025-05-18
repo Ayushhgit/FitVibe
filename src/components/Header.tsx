@@ -25,8 +25,10 @@ const Header: React.FC = () => {
   return (
     <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-7xl rounded-full bg-white/30 dark:bg-background/60 backdrop-blur-lg shadow-xl border border-gray-200 dark:border-gray-700 px-6 py-4 transition-300 flex items-center justify-between">
       <div className="flex items-center gap-2">
-      <Shirt className="h-7 w-7 text-pink-400" />
-       <a href="/"> <div className="font-bold text-2xl bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">FitVibe</div></a>
+        <Shirt className="h-7 w-7 text-pink-400" />
+        <Link to="/">
+          <div className="font-bold text-2xl bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">FitVibe</div>
+        </Link>
       </div>
 
       <div className="flex items-center gap-2 ml-auto">

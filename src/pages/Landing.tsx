@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
+import { Link } from 'react-router-dom';
 import { 
   Shirt, Moon, Sun, UploadCloud, PlayCircle, Sparkles, TrendingUp, 
   Users, Star, Instagram, Twitter, Facebook, X, Menu, CheckCircle, 
@@ -165,14 +166,16 @@ const Landing = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <Shirt className="h-7 w-7 text-primary" />
               <span className="text-xl font-bold text-gradient">FitVibe</span>
-            </a>
+            </Link>
 
             {/* Action Buttons */}
             <div className="flex items-center space-x-4">
-              <a href='/FitVibe/create'><button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg">Try Free</button> </a>
+              <Link to="/create">
+                <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg">Try Free</button>
+              </Link>
 
               {/* Theme Toggle */}
               <button
@@ -221,8 +224,9 @@ const Landing = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-12">
-                 <a href='/FitVibe/create'><button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg w-full sm:w-auto">Start Styling Now</button> </a>
-                
+                <Link to="/create">
+                  <button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg w-full sm:w-auto">Start Styling Now</button>
+                </Link>
               </div>
 
               <div className="flex items-center gap-3">
