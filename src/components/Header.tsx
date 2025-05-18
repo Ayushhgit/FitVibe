@@ -83,7 +83,7 @@ const Header: React.FC = () => {
             </div>
             <DialogFooter>
               <Button variant="outline" onClick={() => setIsDialogOpen(false)}>Cancel</Button>
-              <Button onClick={handleSave} className="bg-fashion-purple hover:bg-fashion-purple/90">
+              <Button onClick={handleSave} className="bg-gradient-to-br from-purple-500 to-pink-500">
                 Save
               </Button>
             </DialogFooter>

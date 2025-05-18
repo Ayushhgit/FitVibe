@@ -316,11 +316,11 @@ const Landing = () => {
 
                 {/* Action buttons */}
                 <div className="flex gap-3">
-                  <button className="flex-1 py-3 px-4 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-600 transition-colors font-medium flex items-center justify-center gap-2">
+                  <button className="flex-1 py-3 px-4 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg transition-colors font-medium flex items-center justify-center gap-2">
                     <Brush className="h-4 w-4" />
                     Refine Outfit
                   </button>
-                  <button className="flex-1 py-3 px-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium flex items-center justify-center gap-2">
+                  <button className="flex-1 py-3 px-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg transition-opacity font-medium flex items-center justify-center gap-2">
                     <Save className="h-4 w-4" />
                     Save Look
                   </button>
