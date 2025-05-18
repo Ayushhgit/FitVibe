@@ -40,7 +40,7 @@ const Header: React.FC = () => {
           className="hidden sm:flex text-white bg-gradient-to-r from-indigo-500 to-pink-500  hover:bg-fashion-purple/20 hover:text-fashion-purple">
           Clear
         </Button>
-        <Link to="/FitVibe/saved" className="hidden sm:block">
+        <Link to="/saved" className="hidden sm:block">
           <Button variant="ghost" size="icon" className="rounded-full transition-all duration-300 hover:bg-fashion-purple/20 hover:text-fashion-purple">
             <Heart className="h-5 w-5 text-pink-400" />
           </Button>
