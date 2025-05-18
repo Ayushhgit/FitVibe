@@ -22,9 +22,9 @@ const App = () => (
       <StyleForgeProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/create" element={<Index />} />
-            <Route path="/saved" element={<SavedOutfits />} />
+            <Route path="/FitVibe/" element={<Landing />} />
+            <Route path="/FitVibe/create" element={<Index />} />
+            <Route path="/FitVibe/saved" element={<SavedOutfits />} />
           </Routes>
           <ProfileModal />
           <SettingsModal />
