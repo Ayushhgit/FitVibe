@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Index from "./pages/Index";
 import SavedOutfits from "./pages/SavedOutfits";
-import NotFound from "./pages/NotFound";
 import ProfileModal from "./components/modals/ProfileModal";
 import SettingsModal from "./components/modals/SettingsModal";
 import { StyleForgeProvider } from "./context/StyleForgeContext";
@@ -26,8 +25,6 @@ const App = () => (
             <Route path="/" element={<Landing />} />
             <Route path="/create" element={<Index />} />
             <Route path="/saved" element={<SavedOutfits />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
           </Routes>
           <ProfileModal />
           <SettingsModal />
