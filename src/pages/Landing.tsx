@@ -172,7 +172,7 @@ const Landing = () => {
 
             {/* Action Buttons */}
             <div className="flex items-center space-x-4">
-              <a href='/create'><button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg">Try Free</button> </a>
+              <a href='/FitVibe/create'><button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg">Try Free</button> </a>
 
               {/* Theme Toggle */}
               <button
@@ -221,7 +221,7 @@ const Landing = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-12">
-                 <a href='/create'><button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg w-full sm:w-auto">Start Styling Now</button> </a>
+                 <a href='/FitVibe/create'><button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium shadow-lg w-full sm:w-auto">Start Styling Now</button> </a>
                 
               </div>
 
